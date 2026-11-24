@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>এ পর্যন্ত জীবনে কত টাকা খরচ করেছি?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#8ED1FC;--ink:#0B3A66;--card:#fff;--inp:#EAF6FF;--bd:#0B3A66;--acc:#1E88E5;--accink:#fff;--fill:#8ED1FC;--peak:#0F5FC2;--hero:#fff;--heroink:#0B3A66;--mute:#2B5B8A;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0B2A4A;--ink:#EAF6FF;--card:#123A63;--inp:#0B2A4A;--bd:#8ED1FC;--acc:#4FA8F0;--accink:#0B2A4A;--fill:#4FA8F0;--peak:#fff;--hero:#8ED1FC;--heroink:#0B2A4A;--mute:#A9D4F5}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0B2A4A;--ink:#EAF6FF;--card:#123A63;--inp:#0B2A4A;--bd:#8ED1FC;--acc:#4FA8F0;--accink:#0B2A4A;--fill:#4FA8F0;--peak:#fff;--hero:#8ED1FC;--heroink:#0B2A4A;--mute:#A9D4F5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Hind Siliguri',system-ui,sans-serif;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:22px 14px 32px}
+h1{font-size:1.7rem;margin:0 0 6px;font-weight:700;line-height:1.2}
+.sub{font-size:.95rem;margin:0 0 18px;color:var(--mute)}
+.card{background:var(--card);border:2.5px solid var(--bd);border-radius:16px;box-shadow:4px 4px 0 var(--bd);padding:12px 14px;margin-bottom:14px}
+label,.lb{display:block;font-weight:700;margin-bottom:6px}
+input{font:inherit;font-size:1.05rem;width:100%;padding:9px 11px;color:var(--ink);background:var(--inp);border:2px solid var(--bd);border-radius:10px}
+input:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:inherit;font-size:.95rem;font-weight:600;color:var(--ink);background:var(--inp);border:2px solid var(--bd);border-radius:999px;padding:4px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--acc);color:var(--accink)}
+.hint{font-size:.88rem;margin-top:6px;color:var(--mute)}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:6px}
+.top label{margin:0}
+.yrs{font-size:.85rem;white-space:nowrap;color:var(--mute)}
+.go{font:inherit;font-size:1.25rem;font-weight:700;width:100%;padding:14px;color:var(--accink);background:var(--acc);border:2.5px solid var(--bd);border-radius:16px;box-shadow:4px 4px 0 var(--bd);cursor:pointer;transition:transform .08s,box-shadow .08s}
+.go:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--bd)}
+.err{margin:10px 2px 0;font-weight:600;min-height:1.4em}
+.hero{background:var(--hero);color:var(--heroink);border:2.5px solid var(--bd);border-radius:20px;box-shadow:6px 6px 0 var(--bd);padding:22px 16px;text-align:center;margin-bottom:16px}
+.hero .k{font-size:1rem;font-weight:600}
+.hero .n{font-size:2.8rem;font-weight:700;line-height:1.15;margin:6px 0;word-break:break-word}
+.hero .w{font-size:1.2rem;font-weight:700}
+.peak{background:var(--acc);color:var(--accink);border:2.5px solid var(--bd);border-radius:16px;box-shadow:4px 4px 0 var(--bd);padding:14px;text-align:center;margin-bottom:16px}
+.peak small{display:block;font-size:.9rem;font-weight:600}
+.peak b{display:block;font-size:1.5rem;line-height:1.3;margin:2px 0}
+.peak span{font-size:.95rem}
+h2{font-size:1.1rem;margin:0 0 10px}
+.bar{display:grid;grid-template-columns:78px 1fr;gap:8px;align-items:center;margin-bottom:8px;font-size:.85rem}
+.trk{background:var(--inp);border:2px solid var(--bd);border-radius:8px;height:26px;position:relative;overflow:hidden}
+.fil{height:100%;width:0;background:var(--fill);transition:width .8s cubic-bezier(.2,.8,.2,1)}
+.top1 .fil{background:var(--peak)}
+.trk span{position:absolute;right:6px;top:0;line-height:22px;font-weight:700;font-size:.78rem}
+.back{font:inherit;font-weight:700;width:100%;padding:11px;color:var(--ink);background:var(--card);border:2.5px solid var(--bd);border-radius:14px;box-shadow:3px 3px 0 var(--bd);cursor:pointer}
+.note{font-size:.82rem;margin-top:14px;color:var(--mute)}
+@media (prefers-reduced-motion:reduce){.fil,.go{transition:none}}
+</style>
+<script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+<main>
+<section id="form">
+<h1>💸 জীবনে এ পর্যন্ত কত টাকা খরচ করেছি?</h1>
+<p class="sub">জন্ম তারিখ দাও, খরচ লেখো, আর শেষে বাটন চেপে দেখো মোট কত হলো!</p>
+<div class="card"><label for="dob">তোমার জন্ম তারিখ</label><input id="dob" type="date"><div class="hint" id="agetxt"></div></div>
+<div class="card"><div class="lb">কত বছর পরপর হিসাব দেবে?</div><div class="chips" id="gaps"></div></div>
+<div class="card"><div class="lb">কীভাবে লিখবে?</div><div class="chips" id="modes"></div></div>
+<div id="rows"></div>
+<button class="go" id="go" type="button">🎉 হিসাব দেখাও</button>
+<div class="err" id="err" role="alert"></div>
+<p class="note">প্রতি বছর ৩৬৫ দিন ধরে হিসাব করা হয়েছে। এটা আনুমানিক হিসাব। তোমার দেওয়া তথ্য শুধু তোমার নিজের ফোনেই থাকে।</p>
+</section>
+<section id="result" hidden>
+<div class="hero">
+  <div class="k">এ পর্যন্ত তুমি মোট খরচ করেছ</div>
+  <div class="n" id="tot"></div>
+  <div class="w" id="words"></div>
+</div>
+<div class="peak"><small>সবচেয়ে বেশি খরচের সময়</small><b id="pk"></b><span id="pk2"></span><br><span id="pk3"></span></div>
+<div class="card"><h2>কোন সময়ে বছরে কত খরচ</h2><div id="bars"></div></div>
+<button class="back" id="back" type="button">← আবার বদলে হিসাব করো</button>
+<p class="note">বন্ধুদের দেখাতে চাইলে এই পেজের স্ক্রিনশট নাও।</p>
+</section>
+</main>
+<script>
+const bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
+const en=s=>String(s).replace(/[০-৯]/g,d=>"০১২৩৪৫৬৭৮৯".indexOf(d)).replace(/[^\d.]/g,"");
+const fmt=n=>Math.round(n).toLocaleString("bn-BD");
+const trim=x=>bn(x.toFixed(2).replace(/\.?0+$/,""));
+const short=n=>n>=1e7?trim(n/1e7)+" কোটি":n>=1e5?trim(n/1e5)+" লাখ":n>=1e3?trim(n/1e3)+" হাজার":fmt(n);
+const words=n=>n>=1e5?"প্রায় "+short(n)+" টাকা":"";
+const $=id=>document.getElementById(id);
+let S={gap:5,mode:"d",dob:"",v:{}};
+try{Object.assign(S,JSON.parse(localStorage.getItem("bd-khoroch2")||"{}"))}catch(e){}
+S.v=S.v||{};
+const dobEl=$("dob");
+dobEl.max=new Date().toISOString().slice(0,10);dobEl.value=S.dob||"";
+const GAPS=[1,2,3,5,10],MODES=[["d","দৈনিক গড়"],["y","বছরে মোট"]];
+function chips(el,items,set){items.forEach(it=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=it[1];b.onclick=()=>{set(it[0]);render()};b.dataset.k=it[0];el.appendChild(b)})}
+chips($("gaps"),GAPS.map(g=>[g,bn(g)+" বছর"]),k=>S.gap=+k);
+chips($("modes"),MODES,k=>S.mode=k);
+dobEl.onchange=dobEl.oninput=()=>{S.dob=dobEl.value;render()};
+let meta=[],age=0;
+function save(){try{localStorage.setItem("bd-khoroch2",JSON.stringify(S))}catch(e){}}
+function getAge(){
+  if(!S.dob)return 0;
+  const t=new Date(S.dob+"T00:00:00");if(isNaN(t))return 0;
+  const y=(Date.now()-t.getTime())/(365.25*864e5);
+  return y>0&&y<=120?y:0;
+}
+function render(){
+  document.querySelectorAll("#gaps .chip").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.k===S.gap));
+  document.querySelectorAll("#modes .chip").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===S.mode));
+  age=getAge();
+  const yy=Math.floor(age),mm=Math.floor((age-yy)*12);
+  $("agetxt").textContent=age?"বয়স: "+bn(yy)+" বছর"+(mm?" "+bn(mm)+" মাস":""):"";
+  const rows=$("rows");rows.innerHTML="";meta=[];
+  const vals=S.v[S.gap]=S.v[S.gap]||{};
+  const ph=S.mode==="d"?"দৈনিক গড় খরচ (টাকা)":"এই সময়ে প্রতি বছর মোট খরচ (টাকা)";
+  for(let i=0,lo=0;age&&lo<age-0.005;i++,lo+=S.gap){
+    const hi=Math.min(lo+S.gap,age),years=hi-lo,last=lo+S.gap>age;
+    const d=document.createElement("div");d.className="card";
+    const lab=bn(lo)+" থেকে "+(last?bn(yy)+" বছর"+(mm?" "+bn(mm)+" মাস":"")+" বয়স (এখন পর্যন্ত)":bn(hi)+" বছর বয়স");
+    const yl=last?(years<1?bn(Math.max(1,Math.round(years*12)))+" মাস":bn(Math.round(years*10)/10)+" বছর"):bn(S.gap)+" বছর";
+    d.innerHTML='<div class="top"><label for="v'+i+'"></label><span class="yrs">'+yl+'</span></div><input id="v'+i+'" type="text" inputmode="numeric" autocomplete="off" placeholder="'+ph+'">';
+    d.querySelector("label").textContent=lab;
+    const inp=d.querySelector("input");
+    if(vals[i]>0)inp.value=bn(Math.round((S.mode==="d"?vals[i]/365:vals[i])*100)/100);
+    inp.oninput=()=>{const v=parseFloat(en(inp.value))||0;vals[i]=S.mode==="d"?v*365:v;save()};
+    rows.appendChild(d);
+    meta.push({i,years,lo,hi,last,lab:bn(lo)+"–"+(last?"এখন":bn(hi))+" বছর"});
+  }
+  save();
+}
+function countUp(el,to){
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches){el.textContent="৳ "+fmt(to);return}
+  const t0=performance.now();
+  (function f(t){const p=Math.min(1,(t-t0)/1400);el.textContent="৳ "+fmt(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0);
+}
+$("go").onclick=()=>{
+  const err=$("err");err.textContent="";
+  if(!age){err.textContent="আগে জন্ম তারিখ দাও।";return}
+  const vals=S.v[S.gap]||{};let total=0;const parts=[];
+  meta.forEach(m=>{const y=vals[m.i]||0;total+=y*m.years;parts.push({m,lab:m.lab,s:y})});
+  if(total<=0){err.textContent="অন্তত একটা ঘরে খরচ লেখো।";return}
+  $("form").hidden=true;$("result").hidden=false;window.scrollTo(0,0);
+  try{window.goatcounter&&window.goatcounter.count({path:"hisab-dekhalo",title:"hisab dekhalo",event:true})}catch(e){}
+  countUp($("tot"),total);
+  $("words").textContent=words(total);
+  const pk=parts.reduce((a,b)=>b.s>a.s?b:a),m=pk.m,y0=parseInt(S.dob.slice(0,4));
+  $("pk").textContent="বয়স "+bn(m.lo)+" থেকে "+(m.last?"এখন পর্যন্ত":bn(Math.round(m.hi))+" বছর");
+  $("pk2").textContent="প্রায় "+bn(y0+m.lo)+" থেকে "+bn(m.last?new Date().getFullYear():y0+Math.round(m.hi))+" সাল";
+  $("pk3").textContent="এই সময়ে বছরে গড়ে ৳ "+short(pk.s);
+  const bars=$("bars");bars.innerHTML="";
+  const max=Math.max(...parts.map(p=>p.s));
+  parts.filter(p=>p.s>0).forEach(p=>{
+    const r=document.createElement("div");r.className="bar"+(p.s===max?" top1":"");
+    r.innerHTML="<div></div><div class='trk'><div class='fil'></div><span></span></div>";
+    r.firstChild.textContent=p.lab;r.querySelector("span").textContent="৳ "+short(p.s);
+    bars.appendChild(r);
+    setTimeout(()=>r.querySelector(".fil").style.width=(p.s/max*100)+"%",60);
+  });
+};
+$("back").onclick=()=>{$("result").hidden=true;$("form").hidden=false;window.scrollTo(0,0)};
+render();
+</script>
+</body>
+</html>
